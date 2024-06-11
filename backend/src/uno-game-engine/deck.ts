@@ -84,6 +84,11 @@ export function makeCard(
     return { type, color, value, id: uid };
 }
 
+export function getCardFromCardId(cardId: string) {
+    const [type, color, value] = cardId.split('-');
+    return makeCard(type as CardType, color as CardColor, value as CardValue);
+}
+
 /**
  * This function shuffles the elements of the given array *in place* . The function behaves in a type-agnostic way.
  * Time complexity: O(n)
